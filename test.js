@@ -453,14 +453,34 @@ let arrOfPeople = [
     listPeopleChoices();
   }
 
-//   const addNewPerson = () => {
-//     let idCounter = 10;
-//     const listElement = document.getElementById('people');
-    // Create input items that get name, age, skillSet, and placeBorn.  
-    // For id find the largest id and add 1 to it or have a counter starting at 10 and add 1 each time a new person is added.
-//   }
-
 //Tests
-// if (typeof describe === 'function') {
+if (typeof describe === 'function'){
+  describe('Player', function(){
+    it('should have an id, a name, age, skillSet, placeBorn', function(){
+      const athlete = new Player(3, 'Judy Twilight', 35, 'fishing', 'Louisville, Kentucky');
+      assert.equal(athlete.id, 3);
+      assert.equal(athlete.name, 'Judy Twilight');
+      assert.equal(athlete.age, 35);
+      assert.equal(athlete.skillSet, 'fishing');
+      assert.equal(athlete.placeBorn, 'Louisville, Kentucky');
+    });
+  });
 
-// }
+  describe('RedTeammate', function(){
+    it('should have an id, a name, age, skillSet, placeBorn, a mascot, and a color upon instantiation', function(){
+      let redteammate = new RedTeammate(3, 'Judy Twilight', 35, 'fishing', 'Louisville, Kentucky', 'Cardinals', 'Red');
+      assert.equal(redteammate.name, 'Judy Twilight');
+      assert.equal(redteammate.mascot, 'Cardinals');
+      assert.equal(redteammate.color, 'Red');
+    });
+  });
+
+  describe('BlueTeammate', function(){
+    it('should have an id, a name, age, skillSet, placeBorn, a mascot, and a color upon instantiation', function(){
+      let blueteammate = new BlueTeammate(2, 'Charles Young', 55, 'welding', 'Omaha, Nebraska', 'Blue Jays', 'Blue');
+      assert.equal(blueteammate.name, 'Charles Young');
+      assert.equal(blueteammate.mascot, 'Blue Jays');
+      assert.equal(blueteammate.color, 'Blue');
+    });
+  });
+}

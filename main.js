@@ -1,12 +1,5 @@
 'use strict';
 
-// const assert = require('assert');
-// const readline = require('readline');
-// const rl = readline.createInterface({
-//   input: process.stdin,
-//   output: process.stdout
-// });
-
 let arrOfPeople = [
     {
       id: 2,
@@ -167,13 +160,10 @@ let arrOfPeople = [
       const li = document.createElement("li");
       const buttonPlayer = document.createElement("button");
       buttonPlayer.innerHTML = "Make Player";
-      buttonPlayer.addEventListener('click', function() {
-          makePlayer(person.id);
-          //listElement.removeChild(li);
-        } )
-      li.appendChild(buttonPlayer)
-      li.appendChild(document.createTextNode(person.name + " - " + person.skillSet))
-      listElement.append(li)
+      buttonPlayer.addEventListener('click', function() { makePlayer(person.id);} )
+      li.appendChild(buttonPlayer);
+      li.appendChild(document.createTextNode(person.name + " - " + person.skillSet));
+      listElement.append(li);
     })
   }
 
@@ -186,38 +176,23 @@ let arrOfPeople = [
       
       const buttonBlue = document.createElement("button");
       buttonBlue.innerHTML = "Add to Blue Team";
-      buttonBlue.addEventListener('click', function() {
-          addBlueTeam(person.id);                            //add to team color
-          //listElement.removeChild(li);
-        } )
-      
+      buttonBlue.addEventListener('click', function() {addBlueTeam(person.id);});
+
       const buttonRed = document.createElement("button");
       buttonRed.innerHTML = "Add to Red Team";
-      buttonRed.addEventListener('click', function() {
-          addRedTeam(person.id);
-          //listElement.removeChild(li);
-        } )
+      buttonRed.addEventListener('click', function() {addRedTeam(person.id);});
 
       const buttonGreen = document.createElement("button");
       buttonGreen.innerHTML = "Add to Green Team";
-      buttonGreen.addEventListener('click', function() {
-          addGreenTeam(person.id);
-          //listElement.removeChild(li);
-        } )
+      buttonGreen.addEventListener('click', function() {addGreenTeam(person.id);});
 
       const buttonWhite = document.createElement("button");
       buttonWhite.innerHTML = "Add to White Team";
-      buttonWhite.addEventListener('click', function() {
-          addWhiteTeam(person.id);
-          //listElement.removeChild(li);
-        } )
+      buttonWhite.addEventListener('click', function() {addWhiteTeam(person.id);});
 
         const buttonRemove = document.createElement("button");
         buttonRemove.innerHTML = "Remove Player";
-        buttonRemove.addEventListener('click', function() {
-            removePlayer(person.id);
-            //listElement.removeChild(li);
-          } )
+        buttonRemove.addEventListener('click', function() {removePlayer(person.id);});
 
       li.appendChild(buttonBlue);
       li.appendChild(buttonRed);
@@ -237,14 +212,11 @@ let arrOfPeople = [
       const li = document.createElement("li");
       const buttonRemove = document.createElement("button");
       buttonRemove.innerHTML = "Remove Player";
-      buttonRemove.addEventListener('click', function() {
-          removeBluePlayer(person.id);
-          //listElement.removeChild(li);
-        } )
-      li.appendChild(buttonRemove)
-      li.appendChild(document.createTextNode(person.name + " - " + person.skillSet))
-      listElement.append(li)
-    })
+      buttonRemove.addEventListener('click', function() {removeBluePlayer(person.id);});
+      li.appendChild(buttonRemove);
+      li.appendChild(document.createTextNode(person.name + " - " + person.skillSet));
+      listElement.append(li);
+    });
   }
 
   // List Red Team and add Remove from team button
@@ -255,14 +227,11 @@ let arrOfPeople = [
       const li = document.createElement("li");
       const buttonRemove = document.createElement("button");
       buttonRemove.innerHTML = "Remove Player";
-      buttonRemove.addEventListener('click', function() {
-          removeRedPlayer(person.id);
-          //listElement.removeChild(li);
-        } )
-      li.appendChild(buttonRemove)
-      li.appendChild(document.createTextNode(person.name + " - " + person.skillSet))
-      listElement.append(li)
-    })
+      buttonRemove.addEventListener('click', function() {removeRedPlayer(person.id);});
+      li.appendChild(buttonRemove);
+      li.appendChild(document.createTextNode(person.name + " - " + person.skillSet));
+      listElement.append(li);
+    });
   }
 
   // List Green Team and add Remove from team button
@@ -273,14 +242,11 @@ let arrOfPeople = [
       const li = document.createElement("li");
       const buttonRemove = document.createElement("button");
       buttonRemove.innerHTML = "Remove Player";
-      buttonRemove.addEventListener('click', function() {
-          removeGreenPlayer(person.id);
-          //listElement.removeChild(li);
-        } )
-      li.appendChild(buttonRemove)
-      li.appendChild(document.createTextNode(person.name + " - " + person.skillSet))
-      listElement.append(li)
-    })
+      buttonRemove.addEventListener('click', function() {removeGreenPlayer(person.id);});
+      li.appendChild(buttonRemove);
+      li.appendChild(document.createTextNode(person.name + " - " + person.skillSet));
+      listElement.append(li);
+    });
   }
 
   // List White Team and add Remove from team button
@@ -291,14 +257,11 @@ let arrOfPeople = [
       const li = document.createElement("li");
       const buttonRemove = document.createElement("button");
       buttonRemove.innerHTML = "Remove Player";
-      buttonRemove.addEventListener('click', function() {
-          removeWhitePlayer(person.id);
-          //listElement.removeChild(li);
-        } )
-      li.appendChild(buttonRemove)
-      li.appendChild(document.createTextNode(person.name + " - " + person.skillSet))
-      listElement.append(li)
-    })
+      buttonRemove.addEventListener('click', function() {removeWhitePlayer(person.id);});
+      li.appendChild(buttonRemove);
+      li.appendChild(document.createTextNode(person.name + " - " + person.skillSet));
+      listElement.append(li);
+    });
   }
 
   const genNum = () => {
@@ -314,7 +277,7 @@ let arrOfPeople = [
 }
   
   const makePlayer = (id) => {
-    console.log(`li ${id} was clicked!`);
+    // console.log(`li ${id} was clicked!`);
 
     let index = arrOfPeople.findIndex(value => {return value.id == id;});
     console.log(index);
@@ -329,7 +292,7 @@ let arrOfPeople = [
   }
 
   const addBlueTeam = (id) => {
-    console.log(`li ${id} was clicked!`)
+    // console.log(`li ${id} was clicked!`)
 
     let index = listOfPlayers.findIndex(value => {return value.id == id;});
     
@@ -350,7 +313,7 @@ let arrOfPeople = [
   }
 
   const addRedTeam = (id) => {
-    console.log(`li ${id} was clicked!`)
+    // console.log(`li ${id} was clicked!`)
 
     let index = listOfPlayers.findIndex(value => {return value.id == id;});
     
@@ -371,7 +334,7 @@ let arrOfPeople = [
   }
 
   const addGreenTeam = (id) => {
-    console.log(`li ${id} was clicked!`)
+    // console.log(`li ${id} was clicked!`)
 
     let index = listOfPlayers.findIndex(value => {return value.id == id;});
     
@@ -392,7 +355,7 @@ let arrOfPeople = [
   }
 
   const addWhiteTeam = (id) => {
-    console.log(`li ${id} was clicked!`)
+    // console.log(`li ${id} was clicked!`)
 
     let index = listOfPlayers.findIndex(value => {return value.id == id;});
     
@@ -414,7 +377,7 @@ let arrOfPeople = [
 
   const removeBluePlayer = (id) => {
     let index = blueTeam.findIndex(value => {return value.id == id;});
-    console.log('index' + index)
+    // console.log('index' + index)
     listOfPlayers.push(blueTeam[index]);
     blueTeam.splice(index, 1);
     listPlayers();
@@ -452,15 +415,3 @@ let arrOfPeople = [
     listPlayers();
     listPeopleChoices();
   }
-
-//   const addNewPerson = () => {
-//     let idCounter = 10;
-//     const listElement = document.getElementById('people');
-    // Create input items that get name, age, skillSet, and placeBorn.  
-    // For id find the largest id and add 1 to it or have a counter starting at 10 and add 1 each time a new person is added.
-//   }
-
-//Tests
-// if (typeof describe === 'function') {
-
-// }
